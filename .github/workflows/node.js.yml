@@ -1,20 +1,6 @@
-name: Node.js CI
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
 
     steps:
       - name: Checkout code
@@ -23,7 +9,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: Install dependencies
         run: npm install
@@ -31,5 +17,5 @@ jobs:
       - name: Run tests
         run: npm test
 
-  - name: Start Node.js server
+      - name: Start Node.js server
         run: node my-node-app/server.js
