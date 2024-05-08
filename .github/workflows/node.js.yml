@@ -28,5 +28,5 @@ jobs:
         run: npm test
 
       - name: Start Node.js server
-        run: node /home/runner/work/Git-action-running-notes/Git-action-running-notes/my-node-app/server.js
+        run: node '/home/runner/work/Git-action-running-notes/Git-action-running-notes/my-node-app/server.js'
 
