@@ -30,3 +30,6 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  - name: Start Node.js server
+        run: node my-node-app/server.js
