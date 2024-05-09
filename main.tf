@@ -1,13 +1,11 @@
+
+
+# Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "lavet100p"
-
-
-  tags = {
-    Name = "MyBucket"
-
-  }
+# Create a VPC
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
 }
