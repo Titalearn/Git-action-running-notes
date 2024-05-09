@@ -17,9 +17,15 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+        
+      - name: terraform validate
+        run: terraform validate
+
+      - name: format
+        run: terraform fmt -check  
 
       - name: Plan Terraform
         run: terraform plan    
-        
+
       - name: Apply Terraform
         run: terraform apply -auto-approve
